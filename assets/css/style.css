@@ -76,10 +76,23 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   padding: 40px 20px 24px;
   border-bottom: 2px solid var(--accent);
 }
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 4px;
+}
+.header-logo-link {
+  flex-shrink: 0;
+}
 .header .logo-img {
-  width: 180px;
+  width: 140px;
   height: auto;
-  margin-bottom: 8px;
+  display: block;
+}
+.header-text {
+  text-align: left;
 }
 .header h1 {
   font-family: 'Bebas Neue', Impact, sans-serif;
@@ -399,6 +412,8 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   .content { border-right: none; border-bottom: 1px dashed var(--border); }
   .nav a { padding: 10px 14px; font-size: 16px; }
   .social-grid { grid-template-columns: 1fr; }
+  .header-top { flex-direction: column; gap: 10px; }
+  .header-text { text-align: center; }
 }
 
 /* === ANIMATIONS === */
