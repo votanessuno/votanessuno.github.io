@@ -1,0 +1,67 @@
+---
+layout: home
+title: Home
+---
+
+<div id="praticamente">
+  <h2 class="section-title">PRATICAMENTE...</h2>
+  <div class="manifesto-excerpt" style="border-left-color: var(--accent-mid);">
+    <p>Non ci presentiamo alle elezioni. Non ti chiediamo di votarci. Ti chiediamo di <strong>non votare nessuno</strong>.</p>
+    <p>Perché? Perché quando voti, stai dando a qualcuno il permesso di decidere sulla vita di 60 milioni di persone — e di usare la forza per far rispettare quelle decisioni. Non sulla tua vita: sulla vita di tutti. Anche di chi non è d'accordo. Anche di chi non ha votato.</p>
+    <p>Noi vogliamo meno Stato nella tua vita. Meno gente che decide per te. Più libertà di campare come ti pare, finché non fai del male a nessuno.</p>
+    <p>Non succederà domani. Ma se non iniziamo a dirlo, non succederà mai.</p>
+    <a href="{{ '/manifesto' | relative_url }}" class="read-more">[LEGGI IL MANIFESTO →]</a>
+  </div>
+</div>
+
+<div id="social-main">
+  <h2 class="section-title">SEGUICI</h2>
+  <div class="social-grid">
+    <a href="#" class="social-card">
+      <span class="social-icon">✈</span>
+      <span class="social-name">Telegram</span>
+      <span class="social-desc">Canale e Community</span>
+    </a>
+    <a href="#" class="social-card">
+      <span class="social-icon">😠</span>
+      <span class="social-name">They Hate Us</span>
+      <span class="social-desc">(but we love them more)</span>
+    </a>
+    <a href="#" class="social-card">
+      <span class="social-icon">▶</span>
+      <span class="social-name">Twitch</span>
+      <span class="social-desc">Livestream & dibattiti</span>
+    </a>
+    <a href="#" class="social-card">
+      <span class="social-icon">◉</span>
+      <span class="social-name">Instagram</span>
+      <span class="social-desc">I post beceri</span>
+    </a>
+    <a href="#" class="social-card">
+      <span class="social-icon">𝕏</span>
+      <span class="social-name">Twitter / X</span>
+      <span class="social-desc">Ancora più beceri</span>
+    </a>
+    <a href="https://github.com/votanessuno" class="social-card">
+      <span class="social-icon">⌥</span>
+      <span class="social-name">GitHub</span>
+      <span class="social-desc">Documenti & codice</span>
+    </a>
+  </div>
+</div>
+
+<div id="blog">
+  <h2 class="section-title">BLOG</h2>
+  <div class="blog-preview">
+    {% for post in site.posts limit:5 %}
+    <div class="blog-entry">
+      <span class="date">{{ post.date | date: "%d.%m.%Y" }}</span>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      {% if post.excerpt %}<p class="excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
+    </div>
+    {% endfor %}
+    {% if site.posts.size == 0 %}
+    <p style="color: var(--text-light); font-style: italic; font-family: 'VT323', monospace; font-size: 16px;">Niente da leggere, per ora. Torna presto.<span class="blink">_</span></p>
+    {% endif %}
+  </div>
+</div>
